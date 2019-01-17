@@ -1,0 +1,42 @@
+#+TITLE: Pavel's knowledge base
+#+TODO: TODO(t) | DONE(d)
+
+* Computers
+** Go
+Notes about [[https://golang.org][Go]] programming language.
+
+*** Reading from closed channel is non-blocking
+
+If you read from a closed channel then it will be successful
+with the default value of the channel's type.
+
+#+NAME: reading-from-closed-channel.go
+#+BEGIN_SRC go
+package main
+
+import "time"
+
+func main() {
+  done := make(chan bool)
+
+  go func() {
+    done <- true
+  }()
+
+  time.Sleep(100*time.Millisecond)
+
+  close(done)
+
+  result := <-done
+  println(result) // will print false
+}
+#+END_SRC
+
+[[https://play.golang.org/p/Q5p4eooB4O1][Go playground]]
+
+
+*Where it's useful?*
+
+When organising shutdown logic: create a quit channel, in every spawned goroutine
+select from quit channel and shutdown goroutine, then in the control flow close quit
+channel on shutdown.
