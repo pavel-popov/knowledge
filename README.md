@@ -1,2 +1,1 @@
-# knowledge
-My knowledge base
+[My knowledge base](knowledge.org)
