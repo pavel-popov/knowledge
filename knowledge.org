@@ -2,6 +2,21 @@
 #+TODO: TODO(t) | DONE(d)
 
 * Computers
+** History
+*** Resources
+- [[http://www.unixguide.net/unix/faq/1.3.shtml][What unix command names stand for?]]
+** Algorithms
+*** TODO Why studying algorithms?
+*** Resources
+- [[http://bigocheatsheet.com/][Big-O Algorithm Complexity Cheat Sheet]]
+** Data structures
+** Programming in general
+*** Naming
+- Create business vocabulary first
+- Then create a technical vocabulary
+- Fix Glossary
+**** Resources
+- [[https://www.slideshare.net/pirhilton/how-to-name-things-the-hardest-problem-in-programming][How to name things: the hardest problem in programming]] (slides)
 ** Go
 Notes about [[https://golang.org][Go]] programming language.
 
@@ -40,3 +55,20 @@ func main() {
 When organising shutdown logic: create a quit channel, in every spawned goroutine
 select from quit channel and shutdown goroutine, then in the control flow close quit
 channel on shutdown.
+** SQL
+:PROPERTIES:
+:CUSTOM_ID: sql
+:END:
+
+** Oracle Database
+*** Administration (DBA)
+*** Development
+**** SQL
+Mainly goes to [[SQL]], this subtree is for oracle-specific SQL.
+**** PL/SQL
+***** Resources
+- [[http://www.williamrobertson.net/documents/plsqlcodingstandards.html][PL/SQL Naming and Coding Standards]]
+** org-mode
+*** How to make link to subchapters?
+Define property (~C-c C-x p~) ~CUSTOM_ID~ and then create a link ~\[\[id\]\]~
+(can be followed using (~C-c C-o~ when cursor is on the link).
